@@ -17,13 +17,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Enlazar XML con Java
+        //Bind XML with java
         textView1 = findViewById(R.id.textView1);
     }
 
-    //Botones numericos
+    //Number buttons
     public void escribirCero(View view) {
-        //Convertir "valor" de Float en String
+        //Convert "valor" from Float to String
         float valor = Float.parseFloat(textView1.getText().toString());
         if (valor == 0.0f) {
             textView1.setText("0");
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Boton de borrar
+    //Delete button
     public void borrarResultado(View view) {
         num1 = 0.0f;
         num2 = 0.0f;
@@ -121,9 +121,9 @@ public class MainActivity extends AppCompatActivity {
         textView1.setText("0");
     }
 
-    //Botones operadores (-, +, /, *, ^)
+    //Operator buttons (-, +, /, *, ^)
     public void operacionRestar(View view) {
-        //Convertir "num1" de Float en String
+        //Convert "num1" from Float to String
         num1 = Float.parseFloat(String.valueOf(textView1.getText()));
         operacion = "-";
         textView1.setText("0");
@@ -153,35 +153,35 @@ public class MainActivity extends AppCompatActivity {
         textView1.setText("0");
     }
 
-    //Boton de igual
+    //Equal button
     public void mostrarResultado(View view) {
-        //Convertir "num2" de Float en String
+        //Convert "num2" from Float to String
         num2 = Float.parseFloat(String.valueOf(textView1.getText()));
         float result = 0.0f;
-        //Restar
+        //Substraction
         if (operacion.equals("-")) {
             result = num1 - num2;
         }
-        //Sumar
+        //Addition
         if (operacion.equals("+")){
             result = num1 + num2;
         }
-        //Dividir
+        //Divide
         if (operacion.equals("/")) {
             if (num2 != 0.0f) {
                 result = num1 / num2;
             } else {
                 result = 0.0f;
-                //Mostrar mensaje por pantalla
+                //Display a message on screen
                 Toast.makeText(this, "Operación invalida", Toast.LENGTH_LONG).show();
             }
         }
-        //Multiplicar
+        //Multiply
         if (operacion.equals("*")) {
             result = num1 * num2;
         }
 
-        //Potencia
+        //Exponentiation
         if (operacion.equals("^")){
             result = (float) Math.pow(num1, num2);
         }
@@ -191,19 +191,19 @@ public class MainActivity extends AppCompatActivity {
         operacion = "";
     }
 
-    //Boton de raiz
+    //Square root button
     public void operacionRaiz(View view) {
         num1 = Float.parseFloat(String.valueOf(textView1.getText()));
         operacion = "√";
         textView1.setText("0");
         float result = 0.0f;
-        //Raiz
+        //Square root
         if(operacion.equals("√")){
             result= (float) Math.sqrt(num1);
             if (result > 0){
             textView1.setText(result + "");
             } else {
-                //Mostrar mensaje por pantalla
+                //Display a message on screen
                 Toast.makeText(this, "Operación invalida", Toast.LENGTH_LONG).show();
             }
         }
@@ -212,13 +212,13 @@ public class MainActivity extends AppCompatActivity {
         operacion = "";
     }
 
-    //Boton de area
+    //circle area button
     public void operacionArea(View view) {
         num1 = Float.parseFloat(String.valueOf(textView1.getText()));
         operacion = "a";
         textView1.setText("0");
         float result = 0.0f;
-        //Calculo del área
+        //Circle area calculation
         result= (float) (3.1416* Math.pow(num1, 2));
         textView1.setText(result + "");
         num1 = 0.0f;
@@ -226,13 +226,13 @@ public class MainActivity extends AppCompatActivity {
         operacion = "";
     }
 
-    //Boton de longitud
+    //Circle length button
     public void operacionLongitud(View view) {
         num1 = Float.parseFloat(String.valueOf(textView1.getText()));
         operacion = "l";
         textView1.setText("0");
         float result = 0.0f;
-        //Calculo de la longitud
+        //Circle length calculation
         result = (float) ((2*3.1416)*num1);
         textView1.setText(result + "");
         num1 = 0.0f;
