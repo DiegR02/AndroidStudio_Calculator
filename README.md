@@ -1,4 +1,4 @@
-# AndroidStudio_Calculator
+# AndroidStudio_Calculator 🧮
 A calculator developed with Android Studio in java language.
 
 ![](https://github.com/DiegR02/JavaAndroidStudio_Calculator/blob/main/Android-Studio.png)
